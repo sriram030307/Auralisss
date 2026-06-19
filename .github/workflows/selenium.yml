@@ -28,8 +28,7 @@ steps:
     uses: browser-actions/setup-chrome@v1
 
   - name: Run Selenium Tests
-    run: |
-      npx mocha tests/*.js --reporter mochawesome
+    run: npx mocha tests/*.js --reporter mochawesome
 
   - name: Upload Report
     uses: actions/upload-artifact@v4
