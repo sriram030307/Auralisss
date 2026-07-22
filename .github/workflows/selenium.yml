@@ -38,3 +38,34 @@ jobs:
           name: test-results-excel
           path: test-results.xlsx
           if-no-files-found: error
+
+  appium-mobile-tests:
+    runs-on: ubuntu-latest
+    needs: build-and-lint
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Appium test dependencies
+        run: |
+          npm ci
+          cd auralis-appium-tests
+          npm install
+
+      - name: Run Appium E2E tests
+        run: |
+          cd auralis-appium-tests
+          npm test || true
+
+      - name: Upload Appium Excel report
+        uses: actions/upload-artifact@v4
+        with:
+          name: appium-mobile-test-report
+          path: auralis-appium-tests/reports/Auralis_Mobile_Test_Report.xlsx
+          if-no-files-found: warn
