@@ -35,7 +35,7 @@ export default function MobileLayout() {
       const saved = tabScrollPositions[location.pathname] ?? 0;
       requestAnimationFrame(() => { node.scrollTop = saved; });
     }
-  }, [location.pathname]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
 
   return (
     <div
