@@ -28,3 +28,13 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Generate test report
+        run: npm run generate:test-report
+
+      - name: Upload test report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-excel
+          path: test-results.xlsx
+          if-no-files-found: error
