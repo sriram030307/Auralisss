@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Shield, X } from "lucide-react";
+import { Shield, X, Check, Bell, Mic } from "lucide-react";
 import { requestNotificationPermission, registerServiceWorker } from "@/lib/notifications";
 
 export default function NotificationSetup() {
@@ -36,7 +36,7 @@ export default function NotificationSetup() {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       stream.getTracks().forEach(t => t.stop());
       setMicGranted(true);
-    } catch (_) {}
+    } catch {}
   };
 
   const dismiss = () => {

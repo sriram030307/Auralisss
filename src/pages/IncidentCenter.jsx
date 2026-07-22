@@ -485,7 +485,7 @@ export default function IncidentCenter() {
               </GlassCard>
             )}
             <AnimatePresence>
-              {logs.map((log, i) => (
+              {logs.map((log) => (
                 <motion.div key={log.id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, x: 40 }}>
                   <GlassCard animate={false} className="!p-3.5 space-y-2">
                     <div className="flex items-start justify-between gap-2">

@@ -31,11 +31,11 @@ async function sendDistressMessages(location) {
       message,
       contacts_notified: contacts.map(c => c.name),
     });
-  } catch (_) {}
+  } catch {}
 }
 
 export default function SOSButton() {
-  const [pressing, setPressing] = useState(false);
+  const [, setPressing] = useState(false);
   const [progressVal, setProgressVal] = useState(0);
   const navigate = useNavigate();
   const { location } = useSafetyEngineContext();

@@ -6,7 +6,6 @@ import {
 } from "recharts";
 import { TrendingUp, Shield, Navigation, Clock, ArrowLeft } from "lucide-react";
 import GlassCard from "@/components/auralis/GlassCard";
-import { useSafetyEngineContext } from "@/contexts/SafetyEngineContext";
 
 // --- Mock data ---
 const monthlyScores = [
@@ -72,7 +71,6 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 export default function SafetyAnalytics() {
   const navigate = useNavigate();
-  const { score, status } = useSafetyEngineContext();
   const [tab] = useState("weekly");
 
   return (
