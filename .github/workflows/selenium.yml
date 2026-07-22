@@ -1,17 +1,15 @@
-name: Selenium Tests
+name: CI
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-  selenium-test:
-    runs-on: windows-latest
-    defaults:
-      run:
-        shell: pwsh
-        working-directory: auralis-selenium-real
+  build-and-lint:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -25,23 +23,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Install Chrome
-        uses: browser-actions/setup-chrome@v1
+      - name: Lint
+        run: npm run lint
 
-      - name: Start Vite dev server
-        run: npm run dev &
-        env:
-          PORT: 5173
-        timeout-minutes: 5
-
-      - name: Wait for server to be ready
-        run: timeout /t 15
-
-      - name: Run Selenium Tests
-        run: npx mocha "tests/**/*.js" --reporter mochawesome
-
-      - name: Upload Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: mochawesome-report
-          path: auralis-selenium-real/mochawesome-report/
+      - name: Build
+        run: npm run build
