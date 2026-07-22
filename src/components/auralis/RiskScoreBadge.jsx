@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, AlertTriangle, ShieldAlert, ShieldCheck } from "lucide-react";
+import { AlertTriangle, ShieldAlert, ShieldCheck } from "lucide-react";
 
 const config = {
   Safe:          { icon: ShieldCheck, bg: "bg-green-500/15",  border: "border-green-500/30",  text: "text-green-400",  ring: "shadow-green-500/20" },

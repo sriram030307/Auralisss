@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { MapPin, AlertTriangle, Shield, Users, Plus, Flame, Car, Eye, ArrowLeft } from "lucide-react";
+import { Shield, Plus, ArrowLeft } from "lucide-react";
 import GlassCard from "@/components/auralis/GlassCard";
 
 const communityAlerts = [

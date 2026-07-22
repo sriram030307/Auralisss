@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bell, BellOff, Mic, Shield, X, Check } from "lucide-react";
+import { Shield, X } from "lucide-react";
 import { requestNotificationPermission, registerServiceWorker } from "@/lib/notifications";
 
 export default function NotificationSetup() {
