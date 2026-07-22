@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from "react-leaflet";
 import { motion } from "framer-motion";
-import { Navigation, Shield, Users, Loader2, ArrowLeft, Phone, MapPin, WifiOff } from "lucide-react";
+import { Navigation, Shield, Users, Loader2, ArrowLeft, WifiOff } from "lucide-react";
 import GlassCard from "@/components/auralis/GlassCard";
 import { useNavigate } from "react-router-dom";
 import "leaflet/dist/leaflet.css";

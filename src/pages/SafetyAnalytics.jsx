@@ -2,10 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
-  BarChart, Bar, LineChart, Line, RadarChart, Radar, PolarGrid, PolarAngleAxis,
-  XAxis, YAxis, ResponsiveContainer, Tooltip, Cell, AreaChart, Area
+  BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, Cell, AreaChart, Area
 } from "recharts";
-import { TrendingUp, Shield, Navigation, Clock, ArrowLeft, MapPin, AlertTriangle } from "lucide-react";
+import { TrendingUp, Shield, Navigation, Clock, ArrowLeft } from "lucide-react";
 import GlassCard from "@/components/auralis/GlassCard";
 import { useSafetyEngineContext } from "@/contexts/SafetyEngineContext";
 

@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { base44 } from "@/api/base44Client";
 import {
-  ArrowLeft, AlertTriangle, FileText, Bell, TrendingUp, Calendar,
-  ChevronDown, ChevronUp, Clock, MapPin, Activity, Shield
+  ArrowLeft, AlertTriangle, Bell, TrendingUp, Calendar,
+  ChevronDown, ChevronUp, Clock, Shield
 } from "lucide-react";
 import GlassCard from "@/components/auralis/GlassCard";
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Moon, GraduationCap, User, Baby, Users2, Shield, ChevronRight, Check, ArrowLeft } from "lucide-react";
+import { Shield, ChevronRight, Check, ArrowLeft } from "lucide-react";
 import GlassCard from "@/components/auralis/GlassCard";
 
 const modes = [

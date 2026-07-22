@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
   User, Phone, Mail, MapPin, Shield, Users, Plus, Settings, LogOut,
-  Pencil, Trash2, Check, X, Star, Import
+  Pencil, Trash2, Check, X, Star
 } from "lucide-react";
 import { useAuth } from "@/lib/AuthContext";
 import { base44 } from "@/api/base44Client";
