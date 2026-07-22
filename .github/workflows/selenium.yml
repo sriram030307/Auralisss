@@ -3,9 +3,11 @@ name: CI
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - '**'
   pull_request:
-    branches: [main]
+    branches:
+      - '**'
 
 jobs:
   build-and-lint:
@@ -126,4 +128,33 @@ jobs:
         with:
           name: vulnerability-test-report
           path: vulnerability-testing/reports/Vulnerability_Test_Report.xlsx
+          if-no-files-found: error
+
+  unit-testing:
+    runs-on: ubuntu-latest
+    needs: vulnerability-testing
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install unit test dependencies
+        run: |
+          cd unit-testing
+          npm install
+
+      - name: Generate unit test report
+        run: |
+          cd unit-testing
+          npm run test:unit
+
+      - name: Upload unit test report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-report
+          path: unit-testing/reports/Unit_Test_Report.xlsx
           if-no-files-found: error
