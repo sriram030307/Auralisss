@@ -1,4 +1,5 @@
-const { Builder, By } = require("selenium-webdriver");
+const createDriver = require("../helpers/driver");
+const { By } = require("selenium-webdriver");
 const assert = require("assert");
 
 describe("Emergency Services Test", function () {
@@ -8,9 +9,7 @@ describe("Emergency Services Test", function () {
     let driver;
 
     before(async () => {
-        driver = await new Builder()
-            .forBrowser("chrome")
-            .build();
+        driver = await createDriver();
     });
 
     after(async () => {

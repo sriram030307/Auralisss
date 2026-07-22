@@ -1,4 +1,5 @@
-const { Builder, By } = require("selenium-webdriver");
+const createDriver = require("../helpers/driver");
+const { By } = require("selenium-webdriver");
 
 describe("Route Discovery", function () {
 
@@ -7,9 +8,7 @@ describe("Route Discovery", function () {
     let driver;
 
     before(async () => {
-        driver = await new Builder()
-            .forBrowser("chrome")
-            .build();
+        driver = await createDriver();
     });
 
     after(async () => {

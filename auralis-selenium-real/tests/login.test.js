@@ -1,4 +1,5 @@
-const { Builder, By, until } = require("selenium-webdriver");
+const createDriver = require("../helpers/driver");
+const { By, until } = require("selenium-webdriver");
 const assert = require("assert");
 const capture = require("../helpers/screenshot");
 
@@ -9,9 +10,7 @@ describe("Auralis Login Test", function () {
     let driver;
 
     before(async () => {
-        driver = await new Builder()
-            .forBrowser("chrome")
-            .build();
+        driver = await createDriver();
     });
 
     after(async () => {

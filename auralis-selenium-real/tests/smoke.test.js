@@ -1,4 +1,4 @@
-const { Builder } = require("selenium-webdriver");
+const createDriver = require("../helpers/driver");
 const assert = require("assert");
 
 describe("Auralis Smoke Test", function () {
@@ -8,9 +8,7 @@ describe("Auralis Smoke Test", function () {
     let driver;
 
     before(async () => {
-        driver = await new Builder()
-            .forBrowser("chrome")
-            .build();
+        driver = await createDriver();
     });
 
     after(async () => {
