@@ -69,3 +69,32 @@ jobs:
           name: appium-mobile-test-report
           path: auralis-appium-tests/reports/Auralis_Mobile_Test_Report.xlsx
           if-no-files-found: warn
+
+  load-testing:
+    runs-on: ubuntu-latest
+    needs: appium-mobile-tests
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install load test dependencies
+        run: |
+          cd load-testing
+          npm install
+
+      - name: Generate baseline load test report
+        run: |
+          cd load-testing
+          npm run test:baseline
+
+      - name: Upload load test report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-load-test-report
+          path: load-testing/reports/Baseline_Load_Test_Report.xlsx
+          if-no-files-found: error
