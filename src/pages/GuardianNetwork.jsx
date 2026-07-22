@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Users, MapPin, Battery, Shield, Home, Briefcase, GraduationCap, Plus, Phone, ArrowLeft } from "lucide-react";
+import { MapPin, Battery, Shield, Home, Briefcase, GraduationCap, Plus, ArrowLeft } from "lucide-react";
 import GlassCard from "@/components/auralis/GlassCard";
 import { useSafetyEngineContext } from "@/contexts/SafetyEngineContext";
 

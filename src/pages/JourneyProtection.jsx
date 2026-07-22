@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Navigation, Clock, MapPin, AlertTriangle, CheckCircle, Play, Square, Route, Timer, Zap, ArrowLeft } from "lucide-react";
+import { Navigation, AlertTriangle, CheckCircle, Square, Route, Timer, Zap, ArrowLeft } from "lucide-react";
 import GlassCard from "@/components/auralis/GlassCard";
 import { useSafetyEngineContext } from "@/contexts/SafetyEngineContext";
 import { base44 } from "@/api/base44Client";

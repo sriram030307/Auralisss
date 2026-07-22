@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Send, Bot, Sparkles, Shield, Loader2, ArrowLeft } from "lucide-react";
+import { Send, Bot, Sparkles, Loader2, ArrowLeft } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { base44 } from "@/api/base44Client";
 import ReactMarkdown from "react-markdown";

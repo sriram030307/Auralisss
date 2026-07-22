@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {
   Shield, Clock, MapPin, ChevronDown, ChevronUp, ArrowLeft,
   Camera, Mic, StopCircle, FolderOpen, Image, FileAudio,
-  Trash2, Plus, FileText, Pencil, Check, X, Link2,
+  Trash2, Plus, FileText, Check, X, Link2,
   CheckCircle2, Send, Eye, Loader2
 } from "lucide-react";
 import GlassCard from "@/components/auralis/GlassCard";
