@@ -23,7 +23,6 @@ const iconMap = {
 
 export default function Notifications() {
   const [notifications, setNotifications] = useState(dummyNotifications);
-  const [refreshKey, setRefreshKey] = useState(0);
 
   const markAllRead = () => setNotifications(notifications.map((n) => ({ ...n, read: true })));
   const unreadCount = notifications.filter((n) => !n.read).length;

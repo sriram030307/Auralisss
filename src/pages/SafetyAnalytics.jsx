@@ -70,12 +70,10 @@ const CustomTooltip = ({ active, payload, label }) => {
   );
 };
 
-const TABS = ["weekly", "monthly", "zones"];
-
 export default function SafetyAnalytics() {
   const navigate = useNavigate();
   const { score, status } = useSafetyEngineContext();
-  const [tab, setTab] = useState("weekly");
+  const [tab] = useState("weekly");
 
   return (
     <div className="px-5 pt-12 pb-4 space-y-5 overflow-y-auto">

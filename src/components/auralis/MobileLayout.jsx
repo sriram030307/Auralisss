@@ -18,7 +18,6 @@ export default function MobileLayout() {
   const showNav = !NO_NAV_ROUTES.includes(location.pathname);
   const { crashDetected, fallDetected, batteryLevel, isCharging } = useSafetyEngineContext();
   const scrollRef = useRef(null);
-  const prevPath = useRef(location.pathname);
 
   // Save scroll on route change, restore on arrival
   const handleScroll = useCallback(() => {

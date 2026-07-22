@@ -19,9 +19,8 @@ import { Battery } from "lucide-react";
 export default function Dashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const { score, status, batteryLevel, isCharging, isJourneyActive, speed } = useSafetyEngineContext();
+  const { score, status, batteryLevel, isJourneyActive, speed } = useSafetyEngineContext();
   const [greeting, setGreeting] = useState("Hello");
-  const [refreshKey, setRefreshKey] = useState(0);
   const [guardianMenuOpen, setGuardianMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -32,7 +31,7 @@ export default function Dashboard() {
   }, []);
 
   const handleRefresh = useCallback(() =>
-    new Promise(res => setTimeout(() => { setRefreshKey(k => k + 1); res(); }, 800))
+    new Promise(res => setTimeout(() => { res(); }, 800))
   , []);
 
   const { pullY, refreshing, onTouchStart, onTouchMove, onTouchEnd, threshold } = usePullToRefresh(handleRefresh);

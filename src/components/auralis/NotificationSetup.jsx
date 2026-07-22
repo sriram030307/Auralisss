@@ -17,8 +17,8 @@ export default function NotificationSetup() {
     setNotifGranted(notif);
 
     // Check mic
-    navigator.permissions?.query({ name: "microphone" }).then(r => {
-      setMicGranted(r.state === "granted");
+    navigator.permissions?.query({ name: "microphone" }).then(() => {
+      setMicGranted(true);
     }).catch(() => {});
 
     // Show banner if any permission not granted

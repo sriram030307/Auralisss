@@ -10,7 +10,9 @@ async function sendDistressMessages(location) {
   let contacts = [];
   try {
     contacts = await base44.entities.EmergencyContact.list();
-  } catch (_) {}
+  } catch {
+    contacts = [];
+  }
 
   const locationText = location
     ? `https://www.google.com/maps?q=${location.lat},${location.lng}`
@@ -34,7 +36,6 @@ async function sendDistressMessages(location) {
 
 export default function SOSButton() {
   const [pressing, setPressing] = useState(false);
-  const [progress, setProgress] = useState(false);
   const [progressVal, setProgressVal] = useState(0);
   const navigate = useNavigate();
   const { location } = useSafetyEngineContext();

@@ -87,7 +87,7 @@ export default function IncidentCenter() {
   });
 
   const allIncidents = [
-    ...alerts.filter(a => a.type === "sos" || a.type === "ai_alert").slice(0, 5).map((a, i) => ({
+    ...alerts.filter(a => a.type === "sos" || a.type === "ai_alert").slice(0, 5).map((a) => ({
       id: `db-${i}`,
       type: a.type,
       date: new Date(a.created_date).toLocaleDateString(),
@@ -112,7 +112,9 @@ export default function IncidentCenter() {
     try {
       const res = await base44.integrations.Core.UploadFile({ file });
       url = res.file_url;
-    } catch (_) { url = URL.createObjectURL(file); }
+    } catch {
+      url = URL.createObjectURL(file);
+    }
     setEvidenceItems(prev => [{
       id: Date.now(), type: "photo", name: file.name,
       size: `${(file.size / 1024).toFixed(0)} KB`,
@@ -162,7 +164,9 @@ export default function IncidentCenter() {
     try {
       const res = await base44.integrations.Core.UploadFile({ file });
       url = res.file_url;
-    } catch (_) { url = URL.createObjectURL(file); }
+    } catch {
+      url = URL.createObjectURL(file);
+    }
     setLogPhoto(url);
     e.target.value = "";
   };

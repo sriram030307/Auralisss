@@ -15,7 +15,7 @@ const journeyPresets = [
 
 export default function JourneyProtection() {
   const navigate = useNavigate();
-  const { isJourneyActive, location, speed, score, status, startJourney, endJourney } = useSafetyEngineContext();
+  const { location, speed, startJourney, endJourney } = useSafetyEngineContext();
 
   const [journey, setJourney] = useState(null);
   const [elapsed, setElapsed] = useState(0);

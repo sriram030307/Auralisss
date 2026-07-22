@@ -47,7 +47,6 @@ export default function WeeklyReport() {
   }, []);
 
   const emergencyAlerts = alerts.filter(a => a.type === "sos" || a.type === "ai_alert");
-  const otherAlerts = alerts.filter(a => !["sos", "ai_alert"].includes(a.type));
   const totalAlerts = alerts.length;
   const totalEmergency = emergencyAlerts.length;
 
