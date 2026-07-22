@@ -8,3 +8,4 @@ A React + Vite + Tailwind CSS safety application.
 npm install
 npm run dev
 ```
+# Auralisss 
